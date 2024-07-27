@@ -9,14 +9,6 @@ const UsernameQuerySchema= z.object({
 
 export async function GET(request:Request) {
 
-    //only handles GET Request (handled already by NextJS)
-    if(request.method !== "GET"){
-        Response.json({
-            success:false,
-            message:"Invalid Request Method"
-        },{status:405})
-    }
-
     await dbConnect();;
     
     try{
